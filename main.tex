@@ -82,6 +82,8 @@
     \vfill
     {\Large\itshape \@author \par}
     \vspace{2cm}
+    
+    \tableofcontents
 
 \end{titlepage}
 \pagenumbering{arabic} % Start arabic numbering
@@ -102,15 +104,37 @@
     
     This report will look at why Automatic Speech Recognition, Large Vocabulary Speech Recognition, and Noise Robust Speech Recognition are the top three applications of neural networks within voice research.
     
-    \section{Neural Networks Types and Overview}
+    \section{Neural Networks Overview}
+    Neural networks are the most common form of biologically inspired computing in the real world. There are many types of Neural Networks each having their own advantages and disadvantages. Many are treated as a black box style model with inputs on one side and outputs on the other, and they all generally require alot of training to present good results.
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.25]{neuralnetworks.png}
+        \caption{Main Types of Neural Networks \cite{MainAI}}
+        \label{fig:neuralNetworks}
+    \end{figure}
+    
+    Figure \ref{fig:neuralNetworks} displays some of the popular neural network types. Each network has differing strengths and because of this they're adapted for their differing uses. The two main networks that are used in voice research are Feed Forward (FF) and Recurrent Neural Network (RNN), other types of networks are used however these two are the main one's we'll be focusing on. Neural Networks are made up of connected processes called neurons \cite{Schmidhuber2015DeepOverview}, each being activated in different ways with input nodes being activated by the environment. The complexity of the problem changes how many computational stages there needs to be in the network.
+    
+    \subsection{Feed Forward}
+    Feed forward networks are arranged in layers \cite{NeuralArchitecture}, with each layer leading to the next layer and then onto the output. Unlike other forms of neural networks there are no connections between layers. The connection between each layer has differing weights and bias changing the result of the output.
+    
+    \subsection{Recurrent Neural Networks}
+    
+    
+    
     
     
     
     \section{Automatic Speech Recognition (ASR)}
     
+
+
     \section{Large Vocabulary Speech Recognition}
     
     \section{Noise Robust Speech Recognition}
+    
+    \section{Conclusion}
 
         
 
@@ -118,7 +142,6 @@
 \pagebreak
 
 \printbibliography
-
 
 
 \end{document}
