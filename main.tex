@@ -76,7 +76,7 @@
     \vspace{0.5cm}
     {\scshape\Large biologically inspired computing \par}
     \vspace{0.5cm}
-    {\scshape\Large ele00017m \par}
+    {\scshape\Large ELE00017M \par}
     \vspace{2.5cm}
     {\scshape\Large top three uses of neural networks in voice research \par}
     % maybe an image here
@@ -196,18 +196,31 @@
     
     In addition to these another training method called drop out training is used which is more robust to unseen variables. Drop out training is used to help reduce the problem of deep neural networks form over fitting, this is where a large NN is trained to a smaller data set and try's to fit itself to the small number of data points. Drop out training works by randomly removing a certain percentage of neurons in the hidden later in each presentation of the sample during training sessions \cite{Hinton2012ImprovingDetectors}, this in turn increases the networks resilience for new or unknown inputs making it ideal for noisy signals. 
     
-    Adding a noise model to the network or noise aware training is as simple as adapting the NN to 
+    Adding a noise model to the network or noise aware training is as simple as adapting the NN by in the training phase adding noise to the data set. Deep Neural network training also use feature enhancing algorithm prior to training to clean up the signal, this is similar to the pre-processing step in normal ASR but instead of producing a tradition MFCC the signal is processed again using the noise reduction algorithm \cite{YuARECOGNITION}.
+    
+    \pagebreak
+    
     \section{Conclusion}
-    250
+    
+    The applications of neural networks are vast, in this report we focused on only those within voice research. Each of these uses are very important in increasing the quality and confidence when using smart voice controlled devices, and are all important in their own right.
+    
+    Looking further afield not just at ASR, LVSR and Noise Robust Speech recognition there is also usage of neural networks in \cite{Nassif2019SpeechReview}:
     \begin{itemize}
-        \item why are these the top uses
-        \item what did we find in the paper
-        \item further discussion points
+        \item Low Resource speech recognition
+        \item Multilingual speech recognition
+        \item Speaker Adaptation
+        \item Speech Separation
     \end{itemize}
     
-    There has been some recent research looking at identifying COVID-19 from coughing, this works in a similar way to ASR but instead of looking to identify phonemes in the neural network it identifies if the cough is similar to that of someone with coronavirus \cite{Laguarta2020COVID-19Recordings}. 
-
-
+    The uses of neural networks that are investigated in this report are important at the moment because there has been some recent research looking at identifying COVID-19 from coughing, which works in a similar way to ASR but instead of looking to identify phonemes in the neural network it identifies if the cough and checks if is similar to that of someone with coronavirus \cite{Laguarta2020COVID-19Recordings}.  Neural networks improve the reliability and accuracy of automatic speech recognition, dealing with noisy signals well and identifying large vocabulary data sets, and they are leading the way to improving the world that we live in. 
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.04]{NeuralNetworks-Full.png}
+        \caption{Mostly complete diagram of Neural Networks \cite{TheInstitute}}
+        \label{fig:NN-Full}
+    \end{figure}
+    
 \pagebreak
 
 \printbibliography
