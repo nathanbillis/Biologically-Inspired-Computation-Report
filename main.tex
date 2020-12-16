@@ -109,7 +109,7 @@
     \section{Neural Networks Overview}
     Neural networks (NN) are the most common form of biologically inspired computing in the real world. There are many types of Neural Networks each having their own advantages and disadvantages. Many are treated as a black box style model with inputs on one side and outputs on the other, and they all generally require alot of training to present good results.
     
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[scale=0.1]{NeuralNetwork.png}
         \caption{Main Types of Neural Networks \cite{Leijnen2020TheZoo}}
@@ -159,7 +159,7 @@
     mel(f)=2595.^{10} log(1+ \frac{f}{700})
     \end{equation}
 
-   When looking at feature extraction from speech Mel Frequency Cepstrum Coefficients analysis (MFCC) is a popular choice because it generally allows the same result irrespective of any time dependant problems. It has a much higher recognition success rate with used in combination with other methods of feature extraction such as using linear prediction co-efficients or Power Spectral Density points \cite{Moonasar2001ASystems}. Before the signal enters the neural network some pre-processing is done to the signal to clean it up and get it into a format that will be easier understood by the network.
+   When looking at feature extraction from speech Mel Frequency Cepstrum Coefficients analysis (MFCC) is a popular choice because it generally allows the same result irrespective of any time dependant problems. It has a much higher recognition success rate with used in combination with other methods of feature extraction such as using linear prediction co-efficients or Power Spectral Density points \cite{Moonasar2001ASystems}. Before the signal enters the neural network some pre-processing \cite{Liu1993EfficientRecognition} is done to the signal to clean it up and get it into a format that will be easier understood by the network.
 
     \subsection{ASR and neutral networks}
     After gaining a basic understanding of the functions of phonemes in the speech chain it's now possible to look at Automatic Speech Recognition (ASR) and why phonemes are so important in it's usage and why neural networks are used.
@@ -177,16 +177,26 @@
     The shift from using statistical models or hybrid methods has allowed ASR to become more accurate and have a higher confidence level. Neural networks are very powerful at classifying speech and work well when paired with good pre-processing such as using Mel Frequency Cepstrum Coefficients over spectrograms.
     
 
-    \section{Large Vocabulary Speech Recognition}
-    Another use of neural networks in voice research is for large vocabulary speech recognition, when looking at ASR we discussed how having a large dataset meant that the neural network would be reasonably large, because of this different approaches have to be taken when looking at large vocabulary speech recognition.
+    \section{Large Vocabulary Speech Recognition (LVSR)}
+    Another use of neural networks in voice research is for large vocabulary speech recognition, when looking at ASR we discussed how having a large data-set meant that the neural network would be reasonably large, because of this different approaches have to be taken when looking at large vocabulary speech recognition.
     
-    RNNs
+    Using hybrid networks with Neural Networks and Hidden Markov Models (HMM) it is possible to use data-sets much larger than traditional networks or models. Hybrid networks work by first training the HMM in order to create training data to train the neural network with, once this data is created and the network has been trained and then fine tuned by back propagation, the outputs are then used for the HMM states. Using this combination approach it allows much bigger data-sets to be used and reduces the word error rate \cite{JaitlyApplicationRecognition}.
     
+    In addition to using hybrid models for LVSR, studies have been done looking at context-dependent networks for LVSR. These networks are also pre trained and they use a mixture of Deep Neural Networks (DNN) and HMM these hybrid context-dependent networks are simplified to CD-DNN-HMM. It works in a similar way to other hybrid networks but with the context dependent nature it improves sentence accuracy by over 5\% \cite{Dahl2012Context-dependentRecognition}. A more cutting edge approach to LVSR is by using Recurrent Neural Networks that perform sentence prediction at character level. This works by replacing the HMM with a RNN, which learns the alignment between input and character sequence using an attention mechanism which is built into the network. The result of this work is to create simpler large vocabulary speech recognition system compared to HMM-DNN models \cite{Bahdanau2016End-to-endRecognition}. This use of neural networks is really useful after getting the phonemes from words and helps to identify words either in context or out of context. 
     
     \section{Noise Robust Speech Recognition}
+    The final top use of neural networks in voice research is for use in noise robust speech recognition. When looking at noisy signals there are two main methods to look at the problem. The first is to attempt to clean up the signal, the second is to train the model to deal with the noisy signal. This area of research is large, not only looking at signals but also at data loss and reconstruction.
     
-    250
+    The majority of methods used are shared between conventional Gaussian model recogniser \cite{Seltzer2013AnRecognition}:
+    \begin{itemize}
+        \item Using feature enhancement to remove issues before training.
+        \item Training with multi-condition data.
+        \item Adding a noise model to the network.
+    \end{itemize}
     
+    In addition to these another training method called drop out training is used which is more robust to unseen variables. Drop out training is used to help reduce the problem of deep neural networks form over fitting, this is where a large NN is trained to a smaller data set and try's to fit itself to the small number of data points. Drop out training works by randomly removing a certain percentage of neurons in the hidden later in each presentation of the sample during training sessions \cite{Hinton2012ImprovingDetectors}, this in turn increases the networks resilience for new or unknown inputs making it ideal for noisy signals. 
+    
+    Adding a noise model to the network or noise aware training is as simple as adapting the NN to 
     \section{Conclusion}
     250
     \begin{itemize}
@@ -195,7 +205,7 @@
         \item further discussion points
     \end{itemize}
     
-        
+    There has been some recent research looking at identifying COVID-19 from coughing, this works in a similar way to ASR but instead of looking to identify phonemes in the neural network it identifies if the cough is similar to that of someone with coronavirus \cite{Laguarta2020COVID-19Recordings}. 
 
 
 \pagebreak
