@@ -1,2 +1,2 @@
-# Biologically-Inspired-Computation Report
+# Biologically Inspired Computation Report
 Report for Biologically Inspired Computation
